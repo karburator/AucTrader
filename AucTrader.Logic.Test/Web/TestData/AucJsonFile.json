@@ -1,0 +1,4 @@
+﻿{
+"realms": [
+	{"name":"Deathguard","slug":"deathguard"}],
+"auctions": [	{"auc":1525884116,"item":110640,"owner":"Тест","ownerRealm":"Тест","bid":1000000,"buyout":1000000,"quantity":1,"timeLeft":"LONG","rand":0,"seed":0,"context":0}]}

@@ -1,0 +1,8 @@
+C:\Users\Troll\Repositories\AucTrader\AucTrader\bin\AucTrader.Logic.dll.config
+C:\Users\Troll\Repositories\AucTrader\AucTrader\bin\AucTrader.Logic.dll
+C:\Users\Troll\Repositories\AucTrader\AucTrader\bin\AucTrader.Logic.pdb
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.dll
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.pdb
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.Properties.Resources.resources
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.csproj.GenerateResource.Cache
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.csprojResolveAssemblyReference.cache

@@ -1,0 +1,9 @@
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.Test.dll
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.Test.pdb
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.dll
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\EntityFramework.dll
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\EntityFramework.xml
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.Logic.Test.csprojResolveAssemblyReference.cache
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.Logic.Test.dll
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.Logic.Test.pdb
+C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.pdb

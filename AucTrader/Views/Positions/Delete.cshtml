@@ -1,0 +1,95 @@
+﻿@model AucTrader.Logic.Models.DataBase.Position
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Position</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Auc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Auc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Item)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Item)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Owner)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OwnerRealm)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OwnerRealm)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BuyOut)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BuyOut)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TimeLeft)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TimeLeft)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rand)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rand)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Seed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Seed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Context)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Context)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

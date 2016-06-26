@@ -1,0 +1,22 @@
+﻿@model AucTrader.Models.UpdateModel
+
+@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Main</h2>
+
+@{
+    if (Model!=null && !String.IsNullOrEmpty(Model.Status))
+    {
+        <p>Update status:
+            @Model.Status
+        </p>
+        <p>Data: 
+            @Model.Data.Files[0].Url
+        </p>
+    }
+}
+
+@Html.ActionLink("Update", "Update")
