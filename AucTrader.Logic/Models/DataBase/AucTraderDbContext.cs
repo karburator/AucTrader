@@ -15,12 +15,11 @@ namespace AucTrader.Logic.Models.DataBase
         }
 
         public DbSet<Position> Positions { get; set; }
+        public DbSet<AppLog> AppLogs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
-
-
 }

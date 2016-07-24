@@ -13,7 +13,7 @@ namespace AucTrader.Logic.Test.Data
         {
             DataUpdateHandler handler = new DataUpdateHandler();
 
-            handler.UpdateData(new AucTraderDbContext());
+            //handler.UpdateData(new AucTraderDbContext());
         }
     }
 }

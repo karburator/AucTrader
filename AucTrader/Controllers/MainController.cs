@@ -33,15 +33,14 @@ namespace AucTrader.Controllers
             IAucDataLoader aucDataLoader = new AucDataLoader();
             model.Data = aucDataLoader.GetAucResponse();
 
-            var file = aucDataLoader.GetAucJsonFile();
+            DateTime datetime;
+            var file = aucDataLoader.GetAucJsonFile(out datetime);
 
             Task task = new Task(() =>
             {
                 AucTraderDbContext db = new AucTraderDbContext();
                 const int MX = 300;
                 int mx = MX;
-                DateTime baseDateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-                DateTime datetime = baseDateTime.AddMilliseconds(model.Data.Files[0].LastModified).ToLocalTime();
 
                 StringBuilder builder = new StringBuilder();
                 builder.Append("select * from Position where Auc in (");
@@ -55,36 +54,10 @@ namespace AucTrader.Controllers
                     });
                 builder.Append(")");
 
-                //Dictionary<Int64, Position> oldPositions = db.Positions
-                //    .SqlQuery(builder.ToString())
-                //    .ToDictionary(el => el.Auc);
-
                 for (int i = 0; i < file.AucPositions.Length; i++)
                 {
                     Position aucPosition = file.AucPositions[i];
                     aucPosition.LoadDateTime = datetime;
-
-                    //if (oldPositions.ContainsKey(aucPosition.Auc))
-                    //    continue;
-
-                    //Position position = aucPosition;
-                    //position.LoadDateTime = datetime;
-
-                    //Position position = new Position()
-                    //{
-                    //    Auc = aucPosition.Auc,
-                    //    Bid = aucPosition.Bid,
-                    //    BuyOut = aucPosition.BuyOut,
-                    //    Context = aucPosition.Context,
-                    //    Item = aucPosition.Item,
-                    //    Owner = aucPosition.Owner,
-                    //    OwnerRealm = aucPosition.OwnerRealm,
-                    //    Quantity = aucPosition.Quantity,
-                    //    Rand = aucPosition.Rand,
-                    //    Seed = aucPosition.Seed,
-                    //    TimeLeft = aucPosition.TimeLeft,
-                    //    LoadDateTime = datetime
-                    //};
 
                     db.Positions.Add((Position) aucPosition);
 

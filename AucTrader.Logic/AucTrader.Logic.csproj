@@ -47,9 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DataHelpers\AppLogHelper.cs" />
+    <Compile Include="DataHelpers\PositionsHelper.cs" />
     <Compile Include="Data\DataUpdateHandler.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DataBase\AppLog.cs" />
     <Compile Include="Models\DataBase\AucTraderDbContext.cs" />
+    <Compile Include="Models\DataBase\AucTraderDbContextHelper.cs" />
     <Compile Include="Models\DataBase\Position.cs" />
     <Compile Include="Models\Data\AucFile.cs" />
     <Compile Include="Models\Data\AucJsonFile.cs" />

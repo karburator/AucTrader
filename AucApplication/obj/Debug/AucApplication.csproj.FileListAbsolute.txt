@@ -1,0 +1,13 @@
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\bin\Debug\AucApplication.exe.config
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\bin\Debug\AucApplication.exe
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\bin\Debug\AucApplication.pdb
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\obj\Debug\AucApplication.csprojResolveAssemblyReference.cache
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\obj\Debug\AucApplication.Form1.resources
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\obj\Debug\AucApplication.Properties.Resources.resources
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\obj\Debug\AucApplication.csproj.GenerateResource.Cache
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\obj\Debug\AucApplication.exe
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\obj\Debug\AucApplication.pdb
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\bin\Debug\AucTrader.Logic.dll
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\bin\Debug\EntityFramework.dll
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\bin\Debug\EntityFramework.xml
+C:\Users\Troll\Documents\Repositories\AucTrader\AucApplication\bin\Debug\AucTrader.Logic.pdb

@@ -7,3 +7,13 @@ C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.L
 C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.Logic.Test.dll
 C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.Logic.Test.pdb
 C:\Users\Troll\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.pdb
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.Logic.Test.csprojResolveAssemblyReference.cache
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.Logic.Test.dll
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.Test.dll.config
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.Test.dll
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.Test.pdb
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.dll
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\EntityFramework.dll
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\EntityFramework.xml
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\obj\Debug\AucTrader.Logic.Test.pdb
+C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic.Test\bin\Debug\AucTrader.Logic.pdb

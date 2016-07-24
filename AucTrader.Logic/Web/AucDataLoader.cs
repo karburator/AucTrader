@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Resources;
 using AucTrader.Logic.Models;
@@ -20,24 +21,34 @@ namespace AucTrader.Logic.Web
             return response;
         }
 
-        public IAucJsonFile GetAucJsonFile()
+        public IAucJsonFile GetAucJsonFile(out DateTime lastModifyDate)
         {
-            IAucJsonFile response = null;
-            IAucResponse aucResponse = GetAucResponse();
+            try
+            {
+                IAucJsonFile response = null;
+                IAucResponse aucResponse = GetAucResponse();
 
-            IWebApiClient webApiClient = new WebApiClient(Resources.Locale, Resources.ApiKey);
-            string file = webApiClient.GetAucFile(aucResponse.Files[0].Url);
+                DateTime baseDateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+                lastModifyDate = baseDateTime.AddMilliseconds(aucResponse.Files.First().LastModified).ToLocalTime();
 
-            IResponseParser parser = new ResponseParser();
-            response = parser.ParseAucJsonFile(file);
+                IWebApiClient webApiClient = new WebApiClient(Resources.Locale, Resources.ApiKey);
+                string file = webApiClient.GetAucFile(aucResponse.Files[0].Url);
 
-            return response;
+                IResponseParser parser = new ResponseParser();
+                response = parser.ParseAucJsonFile(file);
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
     }
 
     public interface IAucDataLoader
     {
         IAucResponse GetAucResponse();
-        IAucJsonFile GetAucJsonFile();
+        IAucJsonFile GetAucJsonFile(out DateTime lastModifyDate);
     }
 }

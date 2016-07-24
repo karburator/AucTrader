@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AucTrader.Logic", "AucTrade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AucTrader.Logic.Test", "AucTrader.Logic.Test\AucTrader.Logic.Test.csproj", "{F1B0B6B7-121A-4B7A-B781-94540C25FECD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AucApplication", "AucApplication\AucApplication.csproj", "{BF1A31AC-3B33-4525-BAF7-8AC77D3F4AAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{F1B0B6B7-121A-4B7A-B781-94540C25FECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1B0B6B7-121A-4B7A-B781-94540C25FECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1B0B6B7-121A-4B7A-B781-94540C25FECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1A31AC-3B33-4525-BAF7-8AC77D3F4AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1A31AC-3B33-4525-BAF7-8AC77D3F4AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1A31AC-3B33-4525-BAF7-8AC77D3F4AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1A31AC-3B33-4525-BAF7-8AC77D3F4AAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
