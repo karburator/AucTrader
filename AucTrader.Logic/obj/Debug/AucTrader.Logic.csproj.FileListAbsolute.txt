@@ -13,4 +13,3 @@ C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTra
 C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.csproj.GenerateResource.Cache
 C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.dll
 C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.pdb
-C:\Users\Troll\Documents\Repositories\AucTrader\AucTrader.Logic\obj\Debug\AucTrader.Logic.csprojResolveAssemblyReference.cache

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Runtime.Serialization;
 
 namespace AucTrader.Logic.Models.DataBase
@@ -11,6 +12,9 @@ namespace AucTrader.Logic.Models.DataBase
 
         [IgnoreDataMember]
         public DateTime LoadDateTime { get; set; }
+
+        [IgnoreDataMember]
+        public DateTime? WithdrawnDateTime { get; set; }
 
         [DataMember(Name = "auc")]
         public Int64 Auc { get; set; }
