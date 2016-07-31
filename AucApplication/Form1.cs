@@ -47,57 +47,32 @@ namespace AucApplication
         {
             try
             {
-                List<Position> oldPositions = PositionsHelper.GetLastLoadPositions();
+                Dictionary<long, Position> oldPositions = PositionsHelper.GetLastLoadPositions()
+                    .ToDictionary(el => el.Auc);
 
                 IAucJsonFile file = GetAucJsonFile();
-                List<Position> newPositions = file.AucPositions
-                    .OrderBy(el => el.Auc)
-                    .ToList();
+                List<Position> newPositions = file.AucPositions.ToList();
 
                 List<Position> oldHardPositions = new List<Position>();
                 List<Position> newHardPositions = new List<Position>();
                 List<Position> toUpdatePositions = new List<Position>();
 
-                // Так как новый список отличается от старого новыми лотами или перевыставленными (их номера явно больше последнего номера старого лота)
-                // и теми лотами, что были проданы (их номера в списке новых лотов будут тоже отсутствовать),
-                // то отсортируем новые и старые лоты по номерам.
-                // Далее будем идти по списку старых лотов, 
-                // - если старый лот совпадает с очередным новым лотом, то возможно старый лот надо обновить, положим новый лот в toUpdatePositions
-                // - если номер очереного старого лота не равен номеру нового, значит лот выбыл (продан или перевыставлен), добавим такой старый лот в oldHardPositions.
-                // После прохода по старым лота, останется список новых лотов, с новыми номерами, его ложим в newHardPositions, будем потом искать перевыставленные лоты.
-                int j = 0;
-                for (int i = 0; i < oldPositions.Count; i++, j++)
+                foreach (Position newPos in newPositions)
                 {
-                    Position oldPos = oldPositions[i];
-
-                    if (j > oldPositions.Count)
-                        break;
-                    Position newPos = newPositions[j];
-
-                    while (oldPos.Auc != newPos.Auc)
+                    Position oldPos = null;
+                    // Если не получилось найти, значит лот новый (раньше такого лота не было, позможно перевыставили).
+                    if (!oldPositions.TryGetValue(newPos.Auc, out oldPos))
                     {
-                        oldHardPositions.Add(oldPos);
-                        oldPos = oldPositions[++j];
+                        newHardPositions.Add(newPos);
                     }
-
-                    toUpdatePositions.Add(newPos);
                 }
-
-                // Оставшиеся новые лоты ложим в другую кучу, чтобы потом мерджить.
-                for (int i = j; i < newPositions.Count; i++)
-                {
-                    newHardPositions.Add(newPositions[i]);
-                }
-
-
-
 
                 // Обновляем старые лоты.
                 AucTraderDbContextHelper.SavePositionsAsPackages(newHardPositions);
             }
             catch (Exception)
             {
-                
+
             }
         }
     }
