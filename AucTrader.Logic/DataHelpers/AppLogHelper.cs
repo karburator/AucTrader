@@ -21,5 +21,16 @@ namespace AucTrader.Logic.DataHelpers
             context.AppLogs.Add(log);
             context.SaveChanges();
         }
+
+        public static void TraceError(string message, Exception e)
+        {
+            AppLog log = new AppLog();
+
+            log.LogType = "Ошибка";
+            log.Message = message+"\n"+ e.StackTrace;
+
+            context.AppLogs.Add(log);
+            context.SaveChanges();
+        }
     }
 }

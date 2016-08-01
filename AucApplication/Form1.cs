@@ -90,9 +90,9 @@ namespace AucApplication
                 IAucJsonFile file = GetAucJsonFile();
                 List<Position> newPositions = file.AucPositions.ToList();
 
-                List<Position> oldHardPositions = new List<Position>();
+                Dictionary<long, Position> toUpdatePositions = new Dictionary<long, Position>();
                 List<Position> newHardPositions = new List<Position>();
-                List<Position> toUpdatePositions = new List<Position>();
+                List<Position> oldHardPositions = new List<Position>();
 
                 DateTime withdrwanDateTime = newPositions.First().LoadDateTime;
                 foreach (Position newPos in newPositions)
@@ -101,23 +101,42 @@ namespace AucApplication
                     // Если не получилось найти, значит лот новый (раньше такого лота не было, позможно перевыставили).
                     if (!oldPositions.TryGetValue(newPos.Auc, out oldPos))
                     {
+                        // Не нашли старой позиции, значит новая, может быть перевыставили и пох, пока что.
                         newHardPositions.Add(newPos);
+                        continue;
                     }
 
+                    // Нашли старую идентичную позицию, обновим ее новыми даннымы.
                     if (oldPos != null)
                     {
-                        oldPos.WithdrawnDateTime = withdrwanDateTime;
+                        newPos.Id = oldPos.Id;
+                        toUpdatePositions.Add(newPos.Auc, newPos);
+                    }
+                }
+
+                foreach (var oldPos in oldPositions.Values)
+                {
+                    Position pos;
+                    if (!toUpdatePositions.TryGetValue(oldPos.Auc, out pos))
+                    {
+                        // Не смогли найти, значит лот выбыл.
+                         oldPos.WithdrawnDateTime = withdrwanDateTime;
                         oldHardPositions.Add(oldPos);
                     }
                 }
 
+                // Закрываем старые лоты.
                 AucTraderDbContextHelper.SavePositionsAsPackages(oldHardPositions);
+
+                // Обновляем старые данные.
+                AucTraderDbContextHelper.SavePositionsAsPackages(toUpdatePositions.Values.ToList());
 
                 // Обновляем старые лоты.
                 AucTraderDbContextHelper.SavePositionsAsPackages(newHardPositions);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                AppLogHelper.TraceError("", e);
             }
         }
     }
